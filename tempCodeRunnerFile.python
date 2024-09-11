@@ -1,0 +1,17 @@
+with open("myfile1.txt", "r") as f1:
+    lines = f1.readlines()
+
+raqamlar = []  
+for i in lines:
+    for j in i.split():
+        if j.isdigit(): 
+            raqamlar.append(int(j))
+
+total_sum = sum(raqamlar)
+with open("raqamlar.txt", "w") as f2:
+    for number in raqamlar:
+        f2.write(f"{number} + ")
+
+    f2.write(f"= {total_sum}\n")
+
+
